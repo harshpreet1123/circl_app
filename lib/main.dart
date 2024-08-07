@@ -1,3 +1,4 @@
+import 'package:circl_app/screens/login_screen.dart';
 import 'package:circl_app/screens/onboarding_screen.dart';
 import 'package:circl_app/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => const SplashScreen(),
         '/onboarding': (context) => const OnboardingScreen(),
+        '/login': (context) => const LoginScreen()
       },
       initialRoute: '/',
     );

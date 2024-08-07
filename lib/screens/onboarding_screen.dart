@@ -14,21 +14,27 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Kcolors.primaryColor,
-      body: const SafeArea(
-          child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Spacer(),
-          Button(
-            label: "Signup",
-            isFilled: false,
-          ),
-          Button(
-            label: "Login",
-            isFilled: true,
-          )
-        ],
+      body: SafeArea(
+          child: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const Spacer(),
+            Button(
+              label: "Signup",
+              isFilled: false,
+            ),
+            Button(
+              label: "Login",
+              isFilled: true,
+              onPressed: () {
+                Navigator.pushNamed(context, '/login');
+              },
+            )
+          ],
+        ),
       )),
     );
   }
