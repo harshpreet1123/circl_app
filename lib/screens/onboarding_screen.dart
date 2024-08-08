@@ -25,6 +25,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             Button(
               label: "Signup",
               isFilled: false,
+              onPressed: () {
+                Navigator.pushNamed(context, '/signup');
+              },
             ),
             Button(
               label: "Login",

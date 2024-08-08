@@ -2,17 +2,16 @@ import 'package:circl_app/widgets/button.dart';
 import 'package:circl_app/widgets/input_field.dart';
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
-
+class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: Container(
+          padding: const EdgeInsets.all(20),
+          width: double.infinity,
+          height: double.infinity,
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 20),
               Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
@@ -26,7 +25,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
                 const Text(
-                  'Login',
+                  'Signup',
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 24,
@@ -40,37 +39,28 @@ class LoginScreen extends StatelessWidget {
                 )
               ]),
               const SizedBox(height: 40),
+              const InputField(label: 'Name'),
+              const SizedBox(height: 20),
               const InputField(label: 'Email'),
               const SizedBox(height: 20),
               const InputField(label: 'Password'),
-              const SizedBox(height: 10),
-              Align(
-                alignment: Alignment.centerRight,
-                child: TextButton(
-                  onPressed: () {},
-                  child: const Text(
-                    'Forgot Password?',
-                    style: TextStyle(
-                      color: Color(0xFF7F3DFF),
-                      fontSize: 12,
-                      fontFamily: 'Inter',
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                ),
-              ),
               const SizedBox(height: 20),
-              const Button(
-                label: 'Login',
+              const InputField(label: 'Confirm Password'),
+              const SizedBox(height: 20),
+              Button(
+                label: 'Signup',
                 isFilled: true,
                 isPrimary: true,
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, '/verify-otp');
+                },
               ),
               const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text(
-                    'Don’t have an Account? ',
+                    'Already have an Account? ',
                     style: TextStyle(
                       fontSize: 12,
                       fontFamily: 'Inter',
@@ -79,10 +69,10 @@ class LoginScreen extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () {
-                      Navigator.pushReplacementNamed(context, '/signup');
+                      Navigator.pushReplacementNamed(context, '/login');
                     },
                     child: const Text(
-                      'Sign up',
+                      'Login',
                       style: TextStyle(
                         color: Color(0xFF7F3DFF),
                         fontSize: 12,
